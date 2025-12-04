@@ -8,11 +8,11 @@ export default function About() {
         {/* top bar with logo left and socials right */}
         <div className="about-topbar" role="toolbar" aria-label="About toolbar">
           <a href="#hero" className="about-topbar-logo" aria-label="Home">
-            <img src={logoSmall} alt="Social Art Group" />
+            
           </a>
 
           <div className="about-topbar-socials" aria-label="Social links">
-            <a href="https://instagram.com/yourhandle" target="_blank" rel="noreferrer" className="social-link" aria-label="Instagram">
+            <a href="https://www.instagram.com/socialartgroup/" target="_blank" rel="noreferrer" className="social-link" aria-label="Instagram">
               <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.5A4.5 4.5 0 1016.5 13 4.5 4.5 0 0012 8.5zm6.6-3.4a1.1 1.1 0 11-1.1-1.1 1.1 1.1 0 011.1 1.1z"/></svg>
             </a>
           </div>

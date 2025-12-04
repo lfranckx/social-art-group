@@ -47,11 +47,11 @@ export default function Contact() {
         {/* topbar: left logo + social on right (keeps visual consistency) */}
         <div className="contact-topbar">
           <a className="contact-topbar-logo" href="#hero" aria-label="Home">
-            <img src={logoSmall} alt="Social Art Group" />
+            
           </a>
 
           <div className="contact-topbar-socials">
-            <a href="https://instagram.com/yourhandle" aria-label="Instagram" target="_blank" rel="noreferrer" className="social-link">
+            <a href="https://www.instagram.com/socialartgroup/" aria-label="Instagram" target="_blank" rel="noreferrer" className="social-link">
               <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.5A4.5 4.5 0 1016.5 13 4.5 4.5 0 0012 8.5zm6.6-3.4a1.1 1.1 0 11-1.1-1.1 1.1 1.1 0 011.1 1.1z"/></svg>
             </a>
           </div>
