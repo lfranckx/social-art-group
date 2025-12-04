@@ -1,0 +1,527 @@
+:root{
+  --max-width: 1200px;
+  --radius: 20px;
+  --bg: #000;
+}
+
+
+/* in CSS file: import */
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700;800;900&display=swap');
+
+
+/* Reset */
+*{box-sizing:border-box}
+html,body,#root{height:100%;margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:var(--bg);}
+a{color:inherit;text-decoration:none}
+
+html, body {
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
+/* App */
+.app-root{min-height:100vh;color:#fff;}
+
+/* Header: transparent over hero; appears on scroll-up only */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 220;
+  transform: translateY(-120%);     /* start hidden */
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1), background 220ms ease, box-shadow 220ms ease;
+  pointer-events: none;             /* block pointer when hidden */
+}
+
+/* when visible, slide into view */
+.site-header.visible {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* when header sits over hero (transparent) */
+.site-header.over-hero {
+  background: #000;
+  box-shadow: none;
+}
+
+/* when page scrolled past hero - add subtle translucent bg */
+.site-header.scrolled-past-hero {
+  background: rgba(0,0,0,0.22);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* inner layout */
+.header-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+
+/* logo */
+.logo { height: 42px; display: block; }
+
+/* nav */
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+/* hide nav when header is not visible */
+.nav-hidden {
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+}
+
+/* show nav only when header is visible */
+.nav-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Questrial", "Nexa", sans-serif;
+  font-size: 15px;
+  padding: 6px 8px;
+}
+
+/* small screens */
+@media (max-width: 860px) {
+  .header-inner { padding: 10px 14px; }
+  .logo { height: 36px; }
+  .nav a { font-size: 14px; }
+}
+
+
+/* HERO SECTION FULL WIDTH */
+/* ---------- HERO (full-bleed, starts at top) ---------- */
+
+/* ---------- FIXED hero CSS (drop-in replacement) ---------- */
+
+.hero-wrapper {
+  width: 100%;
+  background: #000;
+  padding: 0;
+  margin: 0;
+  /* keep your rounded corners if you want, or set to 0 for full-bleed */
+  border-radius: 18px;
+  /* ensure it establishes a stacking context */
+  position: relative;
+  overflow: visible;
+}
+
+/* hero-card: full viewport height (more reliable than 82vh for some layouts) */
+.hero-card {
+  width: 100%;
+  min-height: 100vh;       /* change from 82vh to full-screen; adjust if you prefer */
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;     /* keeps rounded corners */
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* video: always cover the area and stay behind content */
+.hero-video {
+  position: absolute;
+  inset: 0;                /* top:0; right:0; bottom:0; left:0; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;              /* behind overlay/content */
+  pointer-events: none;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* subtle overlay layer between video and content (contrast) */
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;                /* above video, under content */
+  background: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.45));
+  pointer-events: none;      /* let clicks pass to content if needed */
+}
+
+/* overlay content lives above the overlay */
+.hero-overlay {
+  position: relative;       /* keep inside hero-card stacking */
+  z-index: 2;               /* above overlay layer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 0 20px;
+  text-align: center;
+  pointer-events: auto;     /* allow interactions (buttons/links) */
+}
+
+/* logo */
+.hero-logo {
+  max-width: 520px;
+  width: 45%;
+  height: auto;
+  display: block;
+  z-index: 2;
+}
+
+/* tagline: use a light color so it’s readable */
+.hero-tagline {
+  margin: 0;
+  color: #ffffff;           /* FIX: white so it's visible on video */
+  font-size: 22px;
+  font-weight: 400;
+  max-width: 900px;
+  line-height: 1.4;
+  z-index: 2;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.5); /* improves legibility on bright frames */
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+  .hero-card { min-height: 70vh; }
+  .hero-logo { width: 60%; max-width: 420px; }
+  .hero-tagline { font-size: 18px; }
+}
+
+@media (max-width: 640px) {
+  .hero-card { min-height: 60vh; }
+  .hero-logo { width: 75%; max-width: 300px; }
+  .hero-tagline { font-size: 16px; }
+}
+
+/* optional caret blink if you ever use typewriter text */
+.blinking-caret { animation: blink 1s steps(2, start) infinite; }
+@keyframes blink { to { opacity: 0 } }
+
+
+
+
+/* -------------------------------
+   ABOUT SECTION (Canva match)
+   ------------------------------- */
+/* ---------- FULL-SCREEN ABOUT ---------- */
+
+/* ---------- CLEANED & FIXED About CSS (drop-in replacement) ---------- */
+
+/* make sizing predictable */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* full-screen about section */
+.about-section {
+  width: 100%;
+  height: 100vh;       /* FULL SCREEN */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e9dccb;
+  border-radius: 18px;
+  padding: 20px;       /* small page padding so rounded corners are visible on narrow viewports */
+}
+
+.about-section h2{
+  margin-top: 150px !important;
+}
+
+/* container: centered vertically, holds topbar + main grid */
+.about-inner {
+  width: 100%;
+  max-width: 1400px;
+  background: #e9dccb;
+  border-radius: 22px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* centers everything vertically inside the viewport */
+  gap: 20px;
+}
+
+/* If you prefer the topbar pinned to the top and only the grid centered,
+   use this alternative:
+.about-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 40px);  / * adjust based on your outer padding * /
+}
+*/
+
+/* top bar: logo left, social icon right */
+.about-topbar {
+  display: flex;
+  align-items: center;      /* CENTER the topbar items vertically (was flex-start) */
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 6px 18px 6px;
+}
+
+/* small logo top-left */
+.about-topbar-logo img {
+  height: 55px; /* match screenshot proportion */
+  display: block;
+}
+
+/* social on top-right */
+.about-topbar-socials { display: flex; align-items: center; gap: 12px; }
+.social-link {
+  display: inline-grid;
+  place-items: center;
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(0,0,0,0.04);
+  color: #000; text-decoration: none;
+  transition: background .15s ease, transform .08s ease;
+}
+.social-link:hover { background: rgba(0,0,0,0.09); transform: translateY(-2px); }
+.social-link svg { display: block; fill: #000; }
+
+/* content grid: left rotated heading and right copy;
+   align-items:center ensures vertical centering of grid children */
+.about-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center; 
+  /* NEW */
+  align-content: center;
+}
+
+/* LEFT: rotated large display heading */
+.about-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0; /* ensure no forced offset */
+}
+
+.about-display {
+  margin: 0;
+  line-height: 0.88;
+  font-family: "MuseoModerno";
+  font-weight: 800;
+  font-size: clamp(64px, 12vw, 96px);
+  transform: rotate(-18deg) translateY(-10%); /* FIX */
+  transform-origin: left center;
+  color: #0b0b0b;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+/* RIGHT: headline + copy */
+.about-right {
+  text-align: left;
+  padding: 0 60px; /* balanced horizontal padding */
+}
+
+
+.about-headline {
+  margin: 2px 0 18px 0;
+  font-family: "Poppins", system-ui, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 28.6px;
+  color: #0b0b0b;
+  line-height: 1.15;
+}
+.about-copy p {
+  margin: 0 0 14px 0;
+  font-family: "Poppins", system-ui, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #111;
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+/* subtle rounding (kept) */
+.about-inner { border-radius: 16px; }
+
+/* Responsive: on small screens stack content */
+@media (max-width: 980px) {
+  .about-content-grid { grid-template-columns: 1fr; gap: 22px; padding: 12px; }
+  .about-left { justify-content: center; padding-left: 0; }
+  .about-display {
+    transform: rotate(0deg) translateY(0);
+    font-size: clamp(40px, 12vw, 96px);
+    white-space: normal;
+    text-align: center;
+  }
+  .about-right { text-align: center; padding: 0 12px; }
+  .about-topbar { padding: 6px 6px 12px 6px; }
+  .about-topbar-logo img { height: 36px; }
+  .social-link { width: 36px; height: 36px; }
+}
+
+/* wide screens tweak */
+@media (min-width: 1400px) {
+  .about-content-grid { grid-template-columns: 48% 48%; gap: 50px; }
+  .about-display { font-size: clamp(72px, 12vw, 96px); }
+}
+
+
+
+/* ---------- FULL-SCREEN CONTACT ---------- */
+
+.contact-section {
+  width: 100%;
+  height: 100vh;       /* FULL SCREEN */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.contact-inner {
+  width: 100%;
+  max-width: 1400px;
+  height: 90%;
+  background: #fff;
+  border-radius: 22px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* topbar */
+.contact-topbar {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  padding: 6px 6px 18px 6px;
+}
+.contact-topbar-logo img { height: 42px; display:block; }
+.contact-topbar-socials { display:flex; align-items:center; gap:12px; }
+.social-link {
+  display:inline-grid; place-items:center;
+  width:40px; height:40px; border-radius:10px; background: rgba(0,0,0,0.04);
+  color:#000; text-decoration:none;
+}
+.social-link svg { fill:#000; }
+
+/* grid layout */
+.contact-grid {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items:center;
+  padding: 4px 6px 8px 6px;
+  margin-top: 50px;
+}
+
+/* left big rotated heading */
+.contact-left { display:flex; align-items:center; justify-content:flex-start; padding-left: 8px; }
+.contact-display {
+  margin:0;
+  line-height:0.88;
+  font-family: "MuseoModerno", system-ui, -apple-system;
+  font-weight: 600;
+  font-size: clamp(64px, 12vw, 140px);
+  transform: rotate(-18deg);
+  color: #000;
+  white-space: nowrap;
+}
+
+/* Right: form styles */
+.contact-right { padding: 8px 12px; text-align:left; }
+
+/* form inputs: mimic the screenshot (rounded rectangle, thin outline) */
+.contact-form { display:flex; flex-direction:column; gap:12px; max-width:520px; margin-left: auto; }
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #bfbfbf;
+  background: transparent;
+  font-size: 15px;
+  color: #111;
+  outline: none;
+  box-shadow: none;
+  transition: border-color .14s ease, box-shadow .12s ease;
+  font-family: "Poppins", system-ui, Arial, sans-serif;
+}
+
+/* placeholder styling */
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #333;
+  opacity: 0.85;
+  font-family: inherit;
+}
+
+/* textarea larger and vertically roomy */
+.field textarea { min-height: 160px; resize: vertical; }
+
+/* send button */
+.btn {
+  display:inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* row for button + status */
+.form-row { display:flex; align-items:center; gap:14px; margin-top:6px; }
+
+/* status */
+.status .ok { color: #0a7a3b; }
+.status .err { color: #b00020; }
+
+/* input focus style */
+.field input:focus, .field textarea:focus { border-color: #000; box-shadow: 0 4px 18px rgba(0,0,0,0.06); }
+
+/* Responsive */
+@media (max-width: 980px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 22px; padding: 12px; }
+  .contact-left { justify-content:center; padding-left:0; }
+  .contact-display { transform: rotate(0deg); font-size: clamp(40px, 10vw, 96px); white-space: normal; text-align:center; }
+  .contact-right { text-align:center; }
+  .contact-form { margin: 0 auto; }
+}
+
+
+
+
+
+
+/* Sections */
+.container{max-width:var(--max-width);margin:0 auto;padding:48px 20px}
+.about-section h2, .contact-section h2{margin-top:0}
+.contact-form{display:flex;flex-direction:column;gap:12px;max-width:600px}
+.contact-form label{display:flex;flex-direction:column;font-size:14px;color:#ddd}
+.contact-form input, .contact-form textarea{
+  margin-top:8px;padding:10px;border-radius:6px;border:1px solid #222;background:#fff;color:#000;
+}
+.contact-form button{margin-top:8px;padding:10px 16px;border-radius:6px;background:#000;color:#fff;border:none;font-weight:600;cursor:pointer}
+
+@media (max-width:768px){
+  .hero-content h1{font-size:28px}
+}
