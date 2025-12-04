@@ -436,7 +436,7 @@ section {
 .contact-display {
   margin:0;
   line-height:0.88;
-  font-family: "MuseoModerno", system-ui, -apple-system;
+  font-family: "MuseoModerno";
   font-weight: 600;
   font-size: clamp(64px, 12vw, 140px);
   transform: rotate(-18deg);
