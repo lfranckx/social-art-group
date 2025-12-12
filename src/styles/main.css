@@ -188,7 +188,7 @@ section {
 /* logo */
 .hero-logo {
   max-width: 520px;
-  width: 45%;
+  width: 100%;
   height: auto;
   display: block;
   z-index: 2;
@@ -197,7 +197,7 @@ section {
 /* tagline: use a light color so it’s readable */
 .hero-tagline {
   margin: 0;
-  color: #ffffff;           /* FIX: white so it's visible on video */
+  color: #000000;           /* FIX: white so it's visible on video */
   font-size: 22px;
   max-width: 900px;
   line-height: 1.4;
@@ -250,13 +250,13 @@ section {
   align-items: flex-start; /* was center */
   background: #e9dccb;
   border-radius: 18px;
-  padding: 20px;       /* small page padding so rounded corners are visible on narrow viewports */
+  padding: 20px;   
 }
 
 @media (min-width: 981px) {
-  .about-section h2{
+  /* .about-section h2{
     margin-top: 140px !important;
-  }
+  } */
 }
 
 
@@ -270,15 +270,14 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;   /* was center */
-  gap: 20px;
+  gap: 40px;
 }
 
 /* top bar: logo left, social icon right */
 .about-topbar {
   display: flex;
-  align-items: center;      /* CENTER the topbar items vertically (was flex-start) */
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
   padding: 6px 6px 18px 6px;
 }
 
@@ -306,30 +305,28 @@ section {
 .about-content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center; 
-  /* NEW */
-  align-content: center;
+  gap: 36px;
+  align-items: center;
+  padding: 4px 6px 8px 6px;
+  margin-top: 50px;
 }
 
 /* LEFT: rotated large display heading */
 .about-left {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-top: 0; /* ensure no forced offset */
+  justify-content: flex-start;
+  padding-left: 8px;
 }
 
 .about-display {
-  margin: 0;
-  line-height: 0.88;
+  margin:0;
+  line-height:0.88;
   font-family: "MuseoModerno";
-  font-weight: 800;
-  font-size: clamp(64px, 12vw, 96px);
-  transform: rotate(-18deg) translateY(-10%); /* FIX */
-  transform-origin: left center;
-  color: #0b0b0b;
-  letter-spacing: -1px;
+  font-weight: 600;
+  font-size: clamp(64px, 12vw, 140px);
+  transform: rotate(-18deg);
+  color: #000;
   white-space: nowrap;
 }
 
@@ -348,6 +345,7 @@ section {
   font-family: "nexa", sans-serif;
   font-weight: 700;
   font-style: normal;
+  text-align: justify;
 }
 .about-copy p {
   margin: 0 0 14px 0;
@@ -367,7 +365,7 @@ section {
   .about-left { justify-content: center; padding-left: 0; }
   .about-display {
     transform: rotate(0deg) translateY(0);
-    font-size: clamp(40px, 12vw, 96px);
+    font-size: clamp(40px, 12vw, 140px);
     white-space: normal;
     text-align: center;
   }
@@ -380,7 +378,7 @@ section {
 /* wide screens tweak */
 @media (min-width: 1400px) {
   .about-content-grid { grid-template-columns: 48% 48%; gap: 50px; }
-  .about-display { font-size: clamp(72px, 12vw, 96px); }
+  .about-display { font-size: clamp(72px, 12vw, 140px); }
 }
 
 
@@ -394,6 +392,7 @@ section {
   justify-content: center;
   align-items: center;
   background: #fff;
+  border-radius: 18px;
 }
 
 .contact-inner {
@@ -435,7 +434,13 @@ section {
 }
 
 /* left big rotated heading */
-.contact-left { display:flex; align-items:center; justify-content:flex-start; padding-left: 8px; }
+.contact-left {
+  display:flex;
+  align-items:center;
+  justify-content:flex-start; 
+  padding-left: 8px; 
+}
+
 .contact-display {
   margin:0;
   line-height:0.88;
@@ -503,7 +508,7 @@ section {
 @media (max-width: 980px) {
   .contact-grid { grid-template-columns: 1fr; gap: 22px; padding: 12px; }
   .contact-left { justify-content:center; padding-left:0; }
-  .contact-display { transform: rotate(0deg); font-size: clamp(40px, 10vw, 96px); white-space: normal; text-align:center; }
+  .contact-display { transform: rotate(0deg); font-size: clamp(40px, 10vw, 140px); white-space: normal; text-align:center; }
   .contact-right { text-align:center; }
   .contact-form { margin: 0 auto; }
 }
@@ -526,3 +531,96 @@ section {
 @media (max-width:768px){
   .hero-content h1{font-size:28px}
 }
+
+
+/* ===========================
+   MOBILE: keep desktop-like layout
+   (tilted left headlines + left-justified content)
+   Applies for devices <= 980px
+   =========================== */
+
+@media (max-width: 980px) {
+
+  /* ABOUT: single-column grid but keep left-tilted headline and left-justified copy */
+  .about-content-grid {
+    grid-template-columns: 1fr;   /* stack vertically */
+    gap: 18px;
+    padding-left: 6vw;
+    padding-right: 6vw;
+    align-items: center;         /* allows us to center the right column content vertically if needed */
+  }
+
+  .about-left {
+    justify-content: flex-start; /* keep left offset */
+    align-items: center;         /* vertically center the rotated heading relative to itself */
+    padding-left: 0;
+  }
+
+  .about-display {
+    transform: rotate(-16deg);                    /* keep tilt (less angle on small screens) */
+    transform-origin: left center;
+    font-size: clamp(80px, 10vw, 72px);           /* scaled for mobile */
+    white-space: normal;                          /* allow wrapping */
+    text-align: justify;                             /* left-justify text inside the rotated block */
+    line-height: 0.82;                            /* a bit looser on mobile for readability */
+    letter-spacing: -0.03em;
+    margin: 0;
+    padding-bottom: 25px;
+  }
+
+  .about-inner{
+    padding: 0;
+  }
+
+  .about-right {
+    text-align: left;                             /* left-align the paragraph/text */
+    padding: 0 0 0 2vw;                           /* small left padding to match heading offset */
+  }
+
+  /* CONTACT: same behavior as About */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-left: 6vw;
+    padding-right: 6vw;
+    align-items: center;
+  }
+
+  .contact-left {
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .contact-display {
+    transform: rotate(-16deg);
+    transform-origin: left center;
+    font-size: clamp(80px, 10vw, 72px);
+    white-space: normal;
+    text-align: left;
+    line-height: 0.82;
+    letter-spacing: -0.03em;
+    margin: 0;
+    padding-bottom: 25px;
+  }
+
+  .contact-right {
+    text-align: left;
+    padding: 0 0 0 2vw;
+  }
+
+  /* Forms & other right-column elements should remain left-aligned */
+  .contact-form,
+  .about-copy {
+    margin: 0;
+    text-align: left;
+  }
+
+  /* Minor visual tweak: ensure header/nav still fits */
+  .header-inner { padding-left: 12px; padding-right: 12px; }
+}
+
+
+
+
+
