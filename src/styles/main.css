@@ -75,7 +75,7 @@ section {
 }
 
 /* logo */
-.logo { height: 42px; display: block; }
+.logo { height: 50px; display: block; }
 
 /* nav */
 .nav {
@@ -188,7 +188,7 @@ section {
 /* logo */
 .hero-logo {
   max-width: 520px;
-  width: 100%;
+  width: 65%;
   height: auto;
   display: block;
   z-index: 2;
@@ -323,7 +323,7 @@ section {
   margin:0;
   line-height:0.88;
   font-family: "MuseoModerno";
-  font-weight: 600;
+  font-weight: bold;
   font-size: clamp(64px, 12vw, 140px);
   transform: rotate(-18deg);
   color: #000;
@@ -445,7 +445,7 @@ section {
   margin:0;
   line-height:0.88;
   font-family: "MuseoModerno";
-  font-weight: 600;
+  font-weight: bold;
   font-size: clamp(64px, 12vw, 140px);
   transform: rotate(-18deg);
   color: #000;

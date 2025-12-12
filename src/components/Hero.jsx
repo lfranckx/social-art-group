@@ -1,6 +1,6 @@
 import React from "react";
 import heroVideo from "../assets/SAG_Site_Video.mp4"; // ensure file exists
-import logo from "../assets/sag_logo_white.png";
+import logo from "../assets/Logo_Black-Square.png";
 
 export default function Hero() {
   return (
