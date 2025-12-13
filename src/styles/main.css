@@ -4,6 +4,9 @@
   --bg: #000;
 }
 
+body{
+    overflow-x: hidden;
+  }
 
 /* in CSS file: import */
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700;800;900&display=swap');
@@ -621,6 +624,111 @@ section {
 }
 
 
+@media (max-width: 480px) {
+  .contact-inner{
+    box-sizing: inherit;
+  }
+
+  .about-display {
+    font-size: clamp(58px, 10vw, 72px);
+  }
+
+  .about-headline {
+    text-align: left;
+    font-size: 24px;
+    
+  }
+  /* .about-left{
+    justify-content: flex-end;
+  } */
+}
+
+
+/* ===========================
+   MOBILE FIXES ONLY
+   <= 480px
+   =========================== */
+
+@media (max-width: 480px) {
+
+  /* 1. Disable scroll-snap on mobile (VERY IMPORTANT) */
+  html, body {
+    scroll-snap-type: none;
+  }
+  section {
+    scroll-snap-align: none;
+  }
+
+  /* 2. Hard stop horizontal overflow */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* 3. HERO */
+  .hero-overlay {
+    padding: 0 14px;
+  }
+  .hero-logo {
+    width: 70%;
+    max-width: 260px;
+  }
+  .hero-tagline {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  /* 4. ABOUT – rotated heading fix */
+  .about-content-grid {
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 14px;
+  }
+
+  .about-display {
+    font-size: 60px;           /* clamp was still too big */
+    transform: rotate(-15deg);  /* reduce tilt */
+    line-height: 0.95;
+    white-space: normal;
+  }
+
+  .about-right {
+    padding: 0;
+  }
+
+  .about-headline {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .about-copy p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  /* 5. CONTACT – rotated heading fix */
+  .contact-grid {
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 16px;
+  }
+
+  .contact-display {
+    font-size: 60px;
+    transform: rotate(-15deg);
+    line-height: 0.95;
+    white-space: normal;
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .field input,
+  .field textarea {
+    font-size: 16px; /* iOS zoom fix */
+  }
+
+}
 
 
 
