@@ -2,7 +2,7 @@ import React from "react";
 import logoSmall from "../assets/logo-small.png"; // small header logo (from Canva)
 export default function About() {
   return (
-    <section id="about" className="about-section">
+    <section id="about" className="about-section section">
       <div className="about-inner">
 
         {/* top bar with logo left and socials right */}

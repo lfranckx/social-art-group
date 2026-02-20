@@ -42,7 +42,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="contact-section" aria-label="Contact">
+    <section id="contact" className="contact-section section" aria-label="Contact">
       <div className="contact-inner">
         {/* topbar: left logo + social on right (keeps visual consistency) */}
         <div className="contact-topbar">

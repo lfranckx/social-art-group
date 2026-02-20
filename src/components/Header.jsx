@@ -63,6 +63,7 @@ export default function Header() {
         <nav className={`nav ${visible ? "nav-visible" : "nav-hidden"}`} aria-label="Primary">
           <a href="#hero">Home</a>
           <a href="#about">About</a>
+          <a href="#services">Services</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
