@@ -24,7 +24,7 @@ export default function Hero() {
 
         <div className="hero-overlay" aria-hidden="true">
           <img src={logo} alt="Social Art Group" className="hero-logo" />
-          <p className="hero-tagline">A new era of creative partnership is launching soon.</p>
+          <p className="hero-tagline">A new era of creative partnership is here.</p>
         </div>
       </div>
     </section>
