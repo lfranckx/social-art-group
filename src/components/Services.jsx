@@ -115,10 +115,6 @@ export default function Services() {
         <div className="services-heading">
           <h2 className="services-display">
             services
-            <br />
-            &amp;
-            <br />
-            offerings.
           </h2>
         </div>
 
