@@ -25,6 +25,15 @@ export default function Hero() {
         <div className="hero-overlay" aria-hidden="true">
           <img src={logo} alt="Social Art Group" className="hero-logo" />
           <p className="hero-tagline">A new era of creative partnership is here.</p>
+          {/* <a href="#contact" className="cta-btn">Book Now</a> */}
+          <button
+  className="hero-btn"
+  onClick={() => {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  }}
+>
+  Book Now
+</button>
         </div>
       </div>
     </section>

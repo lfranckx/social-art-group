@@ -4,6 +4,8 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Services from "./components/Services";
+import TalentRosterIntro from "./components/TalentRosterIntro";
+import TalentRosterGrid from "./components/TalentRosterGrid";
 
 export default function App() {
   return (
@@ -13,6 +15,8 @@ export default function App() {
         <Hero />
         <About />
         <Services />
+        <TalentRosterIntro />
+        <TalentRosterGrid />
         <Contact />
       </main>
     </div>

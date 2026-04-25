@@ -64,6 +64,35 @@ export default function Contact() {
           </div>
 
           <div className="contact-right">
+            {/* 👉 ADD THIS BLOCK HERE */}
+<div className="contact-info">
+
+  <div className="contact-row">
+    <p className="label">email:</p>
+    <p className="value">marlene@socialartgroup.com</p>
+  </div>
+
+  <div className="contact-row">
+    <p className="label">phone:</p>
+    <p className="value">+1 917 513 7555</p>
+  </div>
+
+  <div className="contact-row">
+    <p className="label">address:</p>
+    <p className="value">1070 norumbega dr. monrovia, ca 91016</p>
+  </div>
+
+  <div className="contact-row">
+    <p className="label">instagram:</p>
+    <p className="value">@socialartgroup</p>
+  </div>
+
+  <div className="contact-row">
+    <p className="label">website:</p>
+    <p className="value">socialartgroup.com</p>
+  </div>
+
+</div>
             <form ref={formRef} className="contact-form" onSubmit={handleSubmit} noValidate>
               <label className="field">
                 <input name="user_name" placeholder="name" required />
