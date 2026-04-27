@@ -4,7 +4,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Services from "./components/Services";
-import TalentRosterIntro from "./components/TalentRosterIntro";
+// import TalentRosterIntro from "./components/TalentRosterIntro";
 import TalentRosterGrid from "./components/TalentRosterGrid";
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
         <Hero />
         <About />
         <Services />
-        <TalentRosterIntro />
+        {/* <TalentRosterIntro /> */}
         <TalentRosterGrid />
         <Contact />
       </main>

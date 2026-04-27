@@ -3,11 +3,11 @@ import emailjs from "@emailjs/browser";
 import logoSmall from "../assets/logo-small.png"; 
 
 // Temporary debug — remove after verification
-console.log("EmailJS env:",
-  import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-);
+// console.log("EmailJS env:",
+//   import.meta.env.VITE_EMAILJS_SERVICE_ID,
+//   import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+//   import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+// );
 
 // keep the top-left logo for this card
 export default function Contact() {
@@ -69,12 +69,12 @@ export default function Contact() {
 
   <div className="contact-row">
     <p className="label">email:</p>
-    <p className="value">marlene@socialartgroup.com</p>
+    <p className="value"><a href='mailto:marlene@socialartgroup.com' target="_blank">marlene@socialartgroup.com</a></p>
   </div>
 
   <div className="contact-row">
     <p className="label">phone:</p>
-    <p className="value">+1 917 513 7555</p>
+    <p className="value"><a href='tel:9175137555' target='_blank'>+1 917 513 7555</a></p>
   </div>
 
   <div className="contact-row">
@@ -84,12 +84,12 @@ export default function Contact() {
 
   <div className="contact-row">
     <p className="label">instagram:</p>
-    <p className="value">@socialartgroup</p>
+    <p className="value"><a href='https://instagram.com/socialartgroup' target='_blank'>@socialartgroup</a></p>
   </div>
 
   <div className="contact-row">
     <p className="label">website:</p>
-    <p className="value">socialartgroup.com</p>
+    <p className="value"><a href='https://socialartgroup.com'>socialartgroup.com</a></p>
   </div>
 
 </div>
