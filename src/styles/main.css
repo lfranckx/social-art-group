@@ -366,7 +366,7 @@ section {
   font-family: "MuseoModerno";
   font-weight: 800;
   font-size: clamp(64px, 12vw, 96px);
-  transform: rotate(-18deg) translateY(-10%);
+  /* transform: rotate(-18deg) translateY(-10%); */
   transform-origin: left center;
   color: #0b0b0b;
   letter-spacing: -1px;
@@ -490,7 +490,7 @@ section {
   font-size: 140px;
   font-weight: 900;
   line-height: 0.85;
-  transform: rotate(-25deg);
+  /* transform: rotate(-25deg); */
   color: #000;
   margin: 0;
 }
@@ -793,7 +793,7 @@ section {
   font-family: "MuseoModerno";
   font-weight: 800;
   font-size: clamp(56px, 7vw, 92px);
-  transform: rotate(-12deg);
+  /* transform: rotate(-12deg); */
   transform-origin: left center;
   color: #0b0b0b;
   letter-spacing: -1px;
