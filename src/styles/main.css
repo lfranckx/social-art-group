@@ -667,7 +667,7 @@ section {
   font-family: "MuseoModerno";
   font-weight: 600;
   font-size: clamp(64px, 12vw, 140px);
-  transform: rotate(-18deg);
+  /* transform: rotate(-18deg); */
   color: #000;
   white-space: nowrap;
 }
