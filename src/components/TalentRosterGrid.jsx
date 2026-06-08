@@ -57,7 +57,7 @@ const section2 = [
   { name: "whitney vermeer", handle: "@whitneyvermeer", img: whit },
   { name: "greg gilmore", handle: "@greg_gilmore", img: greg },
   { name: "jorge x", handle: "@xpresioncreativos spain", img: jorge },
-  { name: "tyler mascio", handle: "@mac_daddybeauty", img: tyler },
+  // { name: "tyler mascio", handle: "@mac_daddybeauty", img: tyler },
 ];
 
 /* REUSABLE GRID */

@@ -44,7 +44,7 @@ const SERVICES = [
     tone: "light",
   },
   {
-    title: "digital strategy and\nplatforms builds",
+    title: "digital strategy and\nplatform builds",
     kicker: "what you say, where you show up, and why it matters",
     body:
       "we help you define your voice, shape your narrative, and build the platforms that support it — from social ecosystems to owned digital spaces that centralize audience and growth.",
