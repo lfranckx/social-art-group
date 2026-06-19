@@ -91,7 +91,7 @@ function Grid({ data }) {
 
 export default function TalentRosterGrid() {
   return (
-    <section className="roster-section">
+    <section id="talent-roster" className="roster-section">
       {/* SECTION 1 */}
       <div className="roster">
         <div className="roster-top">

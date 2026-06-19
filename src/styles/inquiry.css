@@ -1,0 +1,311 @@
+/* =============================================================
+   INQUIRY FORM
+   Matches existing site: light card, black pill buttons,
+   MuseoModerno display, 8–10px radii.
+   ============================================================= */
+
+.inquiry-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  border-radius: 18px;
+  padding: 48px 24px;
+}
+
+.inquiry-inner {
+  width: 100%;
+  max-width: 760px;
+}
+
+/* ---- header ---- */
+.inquiry-head {
+  margin-bottom: 28px;
+}
+
+.inquiry-title {
+  font-family: "MuseoModerno", sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 6vw, 56px);
+  line-height: 1;
+  margin: 0 0 12px;
+  color: #000;
+}
+
+.inquiry-intro {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #444;
+  max-width: 56ch;
+  margin: 0;
+}
+
+/* ---- fieldsets / sections ---- */
+.inquiry-fieldset {
+  border: none;
+  border-top: 1px solid #e4e4e4;
+  padding: 24px 0 4px;
+  margin: 0;
+}
+
+.inquiry-legend {
+  font-family: "MuseoModerno", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000;
+  padding: 0;
+  margin-bottom: 14px;
+}
+
+/* ---- step 1: category buttons ---- */
+.inquiry-cats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.inquiry-cat {
+  text-align: left;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  cursor: pointer;
+  transition: border-color 0.14s ease, background 0.14s ease, color 0.14s ease;
+}
+
+.inquiry-cat:hover {
+  border-color: #000;
+}
+
+.inquiry-cat.is-active {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+/* ---- generic field ---- */
+.inquiry-field {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.inquiry-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.inquiry-req {
+  color: #b00020;
+  font-style: normal;
+}
+
+.inquiry-field input[type="text"],
+.inquiry-field input[type="email"],
+.inquiry-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #bfbfbf;
+  background: transparent;
+  font-size: 15px;
+  color: #111;
+  outline: none;
+  transition: border-color 0.14s ease, box-shadow 0.12s ease;
+  font-family: inherit;
+}
+
+.inquiry-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.inquiry-field input:focus,
+.inquiry-field textarea:focus {
+  border-color: #000;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* error state on a field */
+.inquiry-field[data-error="true"] input,
+.inquiry-field[data-error="true"] textarea {
+  border-color: #b00020;
+}
+
+/* ---- radio / checkbox options ---- */
+.inquiry-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inquiry-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #222;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.inquiry-option input {
+  margin-top: 3px;
+  accent-color: #000;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+}
+
+.inquiry-option-help {
+  display: block;
+  font-size: 12px;
+  color: #777;
+  margin-top: 2px;
+}
+
+/* ---- helper text + errors ---- */
+.inquiry-help {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 12px;
+}
+
+.inquiry-err {
+  color: #b00020;
+  font-size: 13px;
+  margin: 6px 0 0;
+}
+
+/* ---- file upload ---- */
+.inquiry-file {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+
+.inquiry-file input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.inquiry-file-btn {
+  display: inline-block;
+  padding: 9px 16px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  transition: background 0.14s ease, color 0.14s ease;
+}
+
+.inquiry-file:hover .inquiry-file-btn {
+  background: #000;
+  color: #fff;
+}
+
+.inquiry-file input:focus-visible + .inquiry-file-btn {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.inquiry-file-name {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ---- actions ---- */
+.inquiry-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #e4e4e4;
+}
+
+.inquiry-actions .btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.inquiry-actions .btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* ---- confirmation ---- */
+.inquiry-confirm {
+  text-align: center;
+  padding: 64px 16px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.inquiry-confirm-title {
+  font-family: "MuseoModerno", sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 5vw, 44px);
+  color: #000;
+  margin: 0 0 14px;
+}
+
+.inquiry-confirm-body {
+  font-size: 16px;
+  line-height: 1.55;
+  color: #444;
+  margin: 0 0 28px;
+}
+
+.inquiry-restart {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* ---- accessibility: motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .inquiry-cat,
+  .inquiry-file-btn,
+  .inquiry-field input,
+  .inquiry-field textarea {
+    transition: none;
+  }
+}
+
+/* ---- responsive ---- */
+@media (max-width: 768px) {
+  .inquiry-section {
+    padding: 32px 16px;
+  }
+  .inquiry-cats {
+    grid-template-columns: 1fr;
+  }
+}

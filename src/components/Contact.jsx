@@ -65,60 +65,34 @@ export default function Contact() {
 
           <div className="contact-right">
             {/* 👉 ADD THIS BLOCK HERE */}
-<div className="contact-info">
+          <div className="contact-info">
 
-  <div className="contact-row">
-    <p className="label">email:</p>
-    <p className="value"><a href='mailto:marlene@socialartgroup.com' target="_blank">marlene@socialartgroup.com</a></p>
-  </div>
+            <div className="contact-row">
+              <p className="label">email:</p>
+              <p className="value"><a href='mailto:marlene@socialartgroup.com' target="_blank">marlene@socialartgroup.com</a></p>
+            </div>
 
-  <div className="contact-row">
-    <p className="label">phone:</p>
-    <p className="value"><a href='tel:9175137555' target='_blank'>+1 917 513 7555</a></p>
-  </div>
+            <div className="contact-row">
+              <p className="label">phone:</p>
+              <p className="value"><a href='tel:9175137555' target='_blank'>+1 917 513 7555</a></p>
+            </div>
 
-  <div className="contact-row">
-    <p className="label">address:</p>
-    <p className="value">1070 norumbega dr. monrovia, ca 91016</p>
-  </div>
+            <div className="contact-row">
+              <p className="label">address:</p>
+              <p className="value">1070 norumbega dr. monrovia, ca 91016</p>
+            </div>
 
-  <div className="contact-row">
-    <p className="label">instagram:</p>
-    <p className="value"><a href='https://instagram.com/socialartgroup' target='_blank'>@socialartgroup</a></p>
-  </div>
+            <div className="contact-row">
+              <p className="label">instagram:</p>
+              <p className="value"><a href='https://instagram.com/socialartgroup' target='_blank'>@socialartgroup</a></p>
+            </div>
 
-  <div className="contact-row">
-    <p className="label">website:</p>
-    <p className="value"><a href='https://socialartgroup.com'>socialartgroup.com</a></p>
-  </div>
+            <div className="contact-row">
+              <p className="label">website:</p>
+              <p className="value"><a href='https://socialartgroup.com'>socialartgroup.com</a></p>
+            </div>
 
-</div>
-            <form ref={formRef} className="contact-form" onSubmit={handleSubmit} noValidate>
-              <label className="field">
-                <input name="user_name" placeholder="name" required />
-              </label>
-
-              <label className="field">
-                <input name="user_email" type="email" placeholder="email*" required />
-              </label>
-
-              <label className="field">
-                <textarea name="message" placeholder="message" rows="8" required />
-              </label>
-
-              <div className="form-row">
-                <button type="submit" className="btn" disabled={status === "sending"}>
-                  {status === "sending" ? "Sending…" : "Send"}
-                </button>
-
-                {/* small status messages */}
-                <div className="status">
-                  {status === "sent" && <span className="ok">Thanks — message sent!</span>}
-                  {status === "error" && <span className="err">Error sending. Try again.</span>}
-                  {status === "env-missing" && <span className="err">Email config missing.</span>}
-                </div>
-              </div>
-            </form>
+          </div>
           </div>
         </div>
       </div>
