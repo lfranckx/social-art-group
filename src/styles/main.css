@@ -429,7 +429,7 @@ section {
 .contact-section {
   background: #efefef;
   border-radius: 30px;
-  padding: 40px 50px;
+  padding: 40px 0px 0px 0px;
 }
 
 /* ============================= */
@@ -508,9 +508,9 @@ section {
 /* ============================= */
 
 .contact-info {
+  margin-top: 32px;
   margin-bottom: 30px;
-  max-width: 520px;
-  margin-left: auto;
+  width: 100%;
 }
 
 .contact-row {
@@ -614,10 +614,9 @@ section {
 
 .contact-section {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background: #fff;
   border-radius: 18px;
 }
@@ -625,7 +624,6 @@ section {
 .contact-inner {
   width: 100%;
   max-width: 1400px;
-  height: 90%;
   background: #fff;
   border-radius: 22px;
   padding: 28px;
@@ -637,7 +635,7 @@ section {
 .contact-topbar {
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:flex-end;
   padding: 0px 0px 0px 0px;
 }
 
@@ -1320,4 +1318,17 @@ section {
   .roster > * {
     padding: 0 14px;
   }
+}
+
+
+/* ===== Inquiry form + contact-info alignment (added) ===== */
+.contact-inquiry {
+  width: 100%;
+}
+.contact-info {
+  padding-top: 24px;
+  border-top: 1px solid #e0e0e0;
+}
+.contact-row {
+  margin-bottom: 10px;
 }

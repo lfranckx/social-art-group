@@ -50,8 +50,10 @@ export default function InquiryForm() {
   );
 
   function chooseCategory(value) {
-    setCategory(value);
-    setValues(blankValues(value));
+    // Agar wahi category dobara click hui, to deselect (toggle off)
+    const nextCategory = value === category ? "" : value;
+    setCategory(nextCategory);
+    setValues(blankValues(nextCategory));
     setErrors({});
     setFile(null);
     setFileError("");
@@ -189,7 +191,7 @@ export default function InquiryForm() {
   // ---------- CONFIRMATION STATE ----------
   if (status === "sent") {
     return (
-      <section id="contact" className="inquiry-section section" aria-label="Inquiry">
+      <section id="contact" className="inquiry-section inquiry-block" aria-label="Inquiry">
         <div className="inquiry-inner">
           <div className="inquiry-confirm" role="status">
             <h2 className="inquiry-confirm-title">{CONFIRMATION.title}</h2>
@@ -209,7 +211,7 @@ export default function InquiryForm() {
 
   // ---------- FORM ----------
   return (
-    <section id="contact" className="inquiry-section section" aria-label="Inquiry">
+    <section id="contact" className="inquiry-section inquiry-block" aria-label="Inquiry">
       <div className="inquiry-inner">
         <header className="inquiry-head">
           <h2 className="inquiry-title">{INTRO.title}</h2>

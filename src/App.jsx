@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import InquiryForm from "./components/InquiryForm";
 import Services from "./components/Services";
 // import TalentRosterIntro from "./components/TalentRosterIntro";
 import TalentRosterGrid from "./components/TalentRosterGrid";
@@ -18,7 +17,7 @@ export default function App() {
         <Services />
         {/* <TalentRosterIntro /> */}
         <TalentRosterGrid />
-        <InquiryForm />
+        {/* <InquiryForm /> */}
         <Contact />
         
       </main>
