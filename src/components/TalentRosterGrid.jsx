@@ -25,6 +25,8 @@ import whit from '../assets/talent/4 8.png';
 import greg from '../assets/talent/4 11.png';
 import jorge from '../assets/talent/4 12.png';
 import tyler from '../assets/talent/4 15.png' 
+import erin from "../assets/images.jpg";
+import danielle from "../assets/images.jpg";
 
 /* SECTION 1 */
 const section1 = [
@@ -57,6 +59,8 @@ const section2 = [
   { name: "whitney vermeer", handle: "@whitneyvermeer", img: whit },
   { name: "greg gilmore", handle: "@greg_gilmore", img: greg },
   { name: "jorge x", handle: "@xpresioncreativos spain", img: jorge },
+  { name: "Erin Ray", handle: "@erinrayhair", img: erin },
+  { name: "Danielle Fusco", handle: "@_danielledoeshair", img: danielle },
   // { name: "tyler mascio", handle: "@mac_daddybeauty", img: tyler },
 ];
 
