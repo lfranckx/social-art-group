@@ -25,8 +25,8 @@ import whit from '../assets/talent/4 8.png';
 import greg from '../assets/talent/4 11.png';
 import jorge from '../assets/talent/4 12.png';
 import tyler from '../assets/talent/4 15.png' 
-import erin from "../assets/talent/erin.jpg";
-import danielle from "../assets/talent/danielle.jpg";
+import erin from "../assets/talent/erin-1.jpg";
+import danielle from "../assets/talent/danielle-1.jpg";
 
 /* SECTION 1 */
 const section1 = [
