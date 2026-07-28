@@ -15,7 +15,6 @@ import sav from '../assets/talent/3 12.png';
 
 import gina from '../assets/talent/4 3.png';
 import pekela from '../assets/talent/4 7.png';
-import jlad from '../assets/talent/4 10.png';
 import chita from '../assets/talent/4 9.png';
 import ethan from '../assets/talent/4 13.png';
 import laura from '../assets/talent/4 14.png';
@@ -49,7 +48,6 @@ const section1 = [
 const section2 = [
   { name: "gina bianca", handle: "@itsginabianca", img: gina },
   { name: "pekela riley", handle: "@pekelariley", img: pekela },
-  { name: "j ladner", handle: "@itsmrjladner", img: jlad },
   { name: "chita beseau", handle: "@chitabeseau", img: chita },
   { name: "ethan king", handle: "@slickback_buttahtoast", img: ethan },
   { name: "laura gibson", handle: "@lgibsoncolorist", img: laura },
@@ -61,7 +59,6 @@ const section2 = [
   { name: "jorge x", handle: "@xpresioncreativos spain", img: jorge },
   { name: "Erin Ray", handle: "@erinrayhair", img: erin },
   { name: "Danielle Fusco", handle: "@_danielledoeshair", img: danielle },
-  // { name: "tyler mascio", handle: "@mac_daddybeauty", img: tyler },
 ];
 
 /* REUSABLE GRID */
